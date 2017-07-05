@@ -122,7 +122,7 @@ public class SslNetworkLayer implements NetworkLayer {
                 logger.logDebug(
                         "ClientAuth " + sipStack.getClientAuth()  +  " bypassing all cert validations");
             }
-        	sslContext.init(null, trustAllCerts, secureRandom);
+        	sslContext.init(kmFactory.getKeyManagers(), trustAllCerts, secureRandom);
         } else {
         	if (logger.isLoggingEnabled(LogWriter.TRACE_DEBUG)) {
                 logger.logDebug(
